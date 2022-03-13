@@ -6,9 +6,9 @@ TARGET = ./bin/app
 .PHONY: run clean
 
 $(TARGET): $(OBJ_FILES)
-	gcc $^ -o $@ -lSDL2 -lGLEW -lGL
+	gcc $^ -o $@ -lSDL2 -lGLEW -lGL -lm
 build/%.o: src/%.c
-	gcc -c $^ -o $@
+	gcc -c $^ -o $@ -I./lib/include
 run:
 	$(TARGET)
 clean:
